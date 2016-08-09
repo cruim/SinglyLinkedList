@@ -19,7 +19,7 @@ namespace ImplementationOfSinglyLinkedList
 
             for (int j = 0; j < array.Length; j++)
             {
-                array[j] = j + 1;
+                array[j] = j;
                 Console.Write(array[j] + " ");
 
             }
@@ -50,13 +50,23 @@ namespace ImplementationOfSinglyLinkedList
             var c = linkedList.ElementAt(linkedList.First.Value);
             secondList.AddLast(c);
 
-            //for (int x = 1; x < linkedList.Count; x++)
-            //{
-            //    ////присваиваем переменной индекс, который равен значению текущего элемента
 
-            //    c = linkedList.ElementAt(c);
-            //    secondList.AddLast(c);
-            //}
+            for (int x = 1; x < linkedList.Count - 1; x++)
+            {
+                ////присваиваем переменной индекс, который равен значению текущего элемента
+                if (c == linkedList.Max())
+                {
+                    c = linkedList.Last.Value;
+                    c = linkedList.ElementAt(c);
+                    secondList.AddLast(c);
+                }
+                else
+                {
+                    c = linkedList.ElementAt(c);
+                    secondList.AddLast(c);
+                }
+
+            }
 
 
 
@@ -67,7 +77,7 @@ namespace ImplementationOfSinglyLinkedList
                 Console.Write(v + " ");
             }
 
-
+            //Console.WriteLine(linkedList.ElementAt(0));
 
             Console.ReadLine();
 
